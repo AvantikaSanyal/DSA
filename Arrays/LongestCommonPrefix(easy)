@@ -1,0 +1,30 @@
+import java.util.*;
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        int n = strs.length;
+    Arrays.sort(strs);
+    
+    String first=strs[0];
+    String last=strs[strs.length-1];
+    int minLen=Math.min(first.length(), last.length());
+
+   int i=0;
+   while(i<minLen && first.charAt(i)==last.charAt(i))
+    {
+        i++;
+    }
+    String substr=first.substring(0,i);
+    return substr;
+    
+    }
+}
+
+
+
+
+**note** 
+Java functions used :
+1. charAt()
+2. sort()
+3. substring()
+4. length
