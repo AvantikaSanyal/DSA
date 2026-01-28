@@ -1,0 +1,20 @@
+class Solution 
+{
+    public void moveZeroes(int[] nums) 
+    {
+        int count =0;
+        for(int i=0;i<nums.length;i++)
+        {
+           if(nums[i]!=0)
+           {
+            int temp=nums[i];
+            nums[i]=nums[count];
+            nums[count]=temp;
+
+            count++;
+           }
+        }
+    }
+}
+
+**note** - we use count to point where the 0s are. We initially assume that count=0 aka nums[0]=0;
