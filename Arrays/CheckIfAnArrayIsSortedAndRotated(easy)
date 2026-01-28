@@ -1,0 +1,22 @@
+class Solution 
+{
+    public boolean check(int[] nums) 
+    {
+        int count=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>nums[(i+1)%nums.length])
+              count++;
+            else
+             continue;
+        }
+        return count<=1;
+    }
+}
+
+
+**crux logic** :
+if an array is sorted and rotated as asked, there will be only one or zero points where a number is greater than the number after it. If there are more than 1 points as such, then the array isn't sorted and rotated. 
+If that point happens to be at the end of the array, using a modulo of its length will compare it with the first element. If it is elsewhere, it is like normal side4 by sidfe comparison of two consecutive elements.
+
+Main point is the - there will be either 0 or 1 points where one element will be greater than the next.
